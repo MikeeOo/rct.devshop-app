@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 export default {
-    content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+    content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", "./node_modules/preline/dist/*.js"],
     theme: {},
-    plugins: ["prettier-plugin-tailwindcss"],
+    plugins: ["prettier-plugin-tailwindcss", require("@tailwindcss/forms"), require("preline/plugin")],
 };
