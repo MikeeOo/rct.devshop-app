@@ -1,9 +1,3 @@
-
-
 export default function App() {
-  return (
-    <div className="bg-black h-screen text-white">
-      Hello World!
-    </div>
-  )
+    return <div className="h-screen bg-black text-white">Hello World!</div>;
 }
