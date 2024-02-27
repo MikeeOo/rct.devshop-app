@@ -1,27 +1,26 @@
-import { useEffect } from "react";
+import { JSX, useEffect } from "react";
+
 import { useLocation } from "react-router-dom";
-
-import Test from "./components/Test.tsx";
-
 import "preline/preline";
 import { IStaticMethods } from "preline/preline";
+
+import Default from "./layouts/Default.tsx";
+
 declare global {
     interface Window {
         HSStaticMethods: IStaticMethods;
     }
 }
-export default function App() {
+export default function App(): JSX.Element {
     const location = useLocation();
 
     useEffect(() => {
         window.HSStaticMethods.autoInit();
     }, [location.pathname]);
+
     return (
-        <>
-            {/*<div className="h-screen bg-black text-white">Hello World!</div>*/}
-            <div className="bg-black text-white ">
-                <Test />
-            </div>
-        </>
+        <div className="bg-gray-700 text-white">
+            <Default />
+        </div>
     );
 }
