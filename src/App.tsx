@@ -19,7 +19,7 @@ export default function App(): JSX.Element {
     }, [location.pathname]);
 
     return (
-        <div className="font-headings bg-gray-700 text-white">
+        <div className="bg-black font-headings text-white">
             <Default />
         </div>
     );
