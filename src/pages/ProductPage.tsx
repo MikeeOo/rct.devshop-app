@@ -1,11 +1,18 @@
 // @ts-nocheck
-import { JSX } from "react";
-import { products } from "../../ignore/products.ts";
+import { JSX, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { API_URL } from "../data/constants.ts";
 
 export default function ProductPage(): JSX.Element {
     const { id } = useParams();
-    const product = products.find((product) => product.id === id);
+    const [product, setProduct] = useState({});
+
+    useEffect(() => {
+        fetch(`${API_URL}/products/${id}`)
+            .then((res) => res.json())
+            .then((data) => setProduct(data));
+    }, [id]);
+
     return (
         <div className="min-h-screen">
             <Link to="/">Back</Link>
