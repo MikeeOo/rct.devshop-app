@@ -7,9 +7,9 @@ export default function HomePage(): JSX.Element {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch(`${API_URL}/products`)
+        fetch(`api.devshop-app.local/products`)
             .then((res) => res.json())
-            .then((data) => setProducts(data));
+            .then((data) => console.log(data));
     }, []);
 
     return (
